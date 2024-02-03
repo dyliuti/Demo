@@ -3,7 +3,7 @@
 
 #include <QtCore/qglobal.h>
 
-#if defined(EXTENSIONSYSTEM_LIBRARY)
+#if defined(EXTENSION_LIBRARY)
 #  define EXTENSION_EXPORT Q_DECL_EXPORT
 #else
 #  define EXTENSION_EXPORT Q_DECL_IMPORT

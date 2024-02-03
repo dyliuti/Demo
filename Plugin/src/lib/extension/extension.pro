@@ -5,7 +5,7 @@ TARGET = extension
 
 CONFIG += c++17
 
-DEFINES += YMW_LIBRARY
+DEFINES += YMW_LIBRARY EXTENSION_LIBRARY
 
 win32 {
     HEADERS += $$system(for /r $$PWD %i in (*.h,*.hpp) do @echo %i)

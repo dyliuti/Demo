@@ -28,7 +28,7 @@ public:
         m_path = dir;
         m_bLoaded = true;
 
-        static std::vector<std::string> checkPlugins{"ChatInClassPlugin", "ClassRoom", "cloudDiskPlugin", "dicePlugin", "EeoMediaPlugin", "ImPlugin", "loginplugin", "RosterPlugin", "StandalonePlugin", "SymmetricPlugin"};
+        static std::vector<std::string> checkPlugins{"plugin1", "plugin2"};
         auto tmpCheckPlugins = checkPlugins;
 
         QDir pluginsDir = dir;
@@ -45,7 +45,7 @@ public:
 #elif defined Q_OS_LINUX
         nameFilters << "*.so";
 #endif
-        const auto entryInfoList = pluginsDir.entryInfoList(nameFilters);
+        const auto& entryInfoList = pluginsDir.entryInfoList(nameFilters);
         for (const QFileInfo &info : entryInfoList) {
             QString pluginName = info.baseName();
             if (pluginName.startsWith("lib")) {

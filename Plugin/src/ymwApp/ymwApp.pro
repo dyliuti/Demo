@@ -3,7 +3,7 @@ QT       += core gui
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 CONFIG += c++17
-DEFINES += YMW_PLUGIN
+DEFINES += YMW_LIBRARY
 ymw += extension plugin1 plugin2
 
 TEMPLATE = app

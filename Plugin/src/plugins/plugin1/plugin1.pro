@@ -5,8 +5,9 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 ymw += extension
 
 CONFIG += c++17
-TARGET = Plugin1
+TARGET = plugin1
 TEMPLATE = lib
+DEFINES += YMW_PLUGIN
 
 # You can make your code fail to compile if it uses deprecated APIs.
 # In order to do so, uncomment the following line.
@@ -18,10 +19,8 @@ win32 {
     FORMS += $$system(for /r $$PWD %i in (*.ui) do @echo %i)
 }
 
-DEFINES += YMW_PLUGIN
-
-include(../../framework.pri)
-include(../module.pri)
+include(../../../framework.pri)
+include(../../module.pri)
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

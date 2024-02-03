@@ -48,43 +48,43 @@ defineTest(check_pro_exist_if_need) {
     return (true)
 }
 
-defineTest(copySharedLib) {
-    win32: _lib_name = $${1}.dll
-    macx: _lib_name = lib$${1}.dylib
+#defineTest(copySharedLib) {
+#    win32: _lib_name = $${1}.dll
+#    macx: _lib_name = lib$${1}.dylib
 
-    _sub_dir = $${2}
+#    _sub_dir = $${2}
 
-    _lib_src_path = $${sharedlib_root}/$${_platform_type}
+#    _lib_src_path = $${sharedlib_root}/$${_platform_type}
 
-    isEmpty(_sub_dir) {
-        _lib_target_path = $${lib_root}
-    } else {
-        _lib_src_path = $${_lib_src_path}/$${_sub_dir}
-        _lib_target_path = $${lib_root}/$${_sub_dir}
-    }
+#    isEmpty(_sub_dir) {
+#        _lib_target_path = $${lib_root}
+#    } else {
+#        _lib_src_path = $${_lib_src_path}/$${_sub_dir}
+#        _lib_target_path = $${lib_root}/$${_sub_dir}
+#    }
 
-    !exists($${_lib_target_path}): mkpath($${_lib_target_path})
+#    !exists($${_lib_target_path}): mkpath($${_lib_target_path})
 
-    SRC_FILE = $${_lib_src_path}/$${_lib_name}
-    TARGET_FILE = $${_lib_target_path}/$${_lib_name}
+#    SRC_FILE = $${_lib_src_path}/$${_lib_name}
+#    TARGET_FILE = $${_lib_target_path}/$${_lib_name}
 
-    win32 {
-        SRC_FILE ~= s,/,\\,g
-        TARGET_FILE ~= s,/,\\,g
-    }
+#    win32 {
+#        SRC_FILE ~= s,/,\\,g
+#        TARGET_FILE ~= s,/,\\,g
+#    }
 
-#    message("src: $$SRC_FILE")
-#    message("target: $$TARGET_FILE")
+##    message("src: $$SRC_FILE")
+##    message("target: $$TARGET_FILE")
 
-    win32 {
-        QMAKE_POST_LINK += $$quote($${QMAKE_COPY_FILE} $${SRC_FILE} $${TARGET_FILE}$$escape_expand(\n\t))
-    }
-    macx {
-        QMAKE_POST_LINK += $$quote($${QMAKE_COPY_FILE} -a $${SRC_FILE} $${TARGET_FILE}$$escape_expand(\n\t))
-    }
-    export(QMAKE_POST_LINK)
-    return(true)
-}
+#    win32 {
+#        QMAKE_POST_LINK += $$quote($${QMAKE_COPY_FILE} $${SRC_FILE} $${TARGET_FILE}$$escape_expand(\n\t))
+#    }
+#    macx {
+#        QMAKE_POST_LINK += $$quote($${QMAKE_COPY_FILE} -a $${SRC_FILE} $${TARGET_FILE}$$escape_expand(\n\t))
+#    }
+#    export(QMAKE_POST_LINK)
+#    return(true)
+#}
 
 # D:/Code2/Demo/Plugin/ymwPluginRelease/qrelease
 isEmpty(lib_root){ # if $$lib_root not set, set it. $$OUTPUT_PWD may be comes from framework.pri
