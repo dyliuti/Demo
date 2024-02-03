@@ -1,0 +1,14 @@
+{
+    "Name": "plugin1",
+    "Version": "1.0.0",
+    "CompatVersion": "1.0.0",
+    "Required": true,
+    "Vendor": "Yanminwei Ltd",
+    "Copyright": "(C) 2024 Yanminwei Ltd",
+    "Category": "YMW",
+    "Description": "the plugin1 test",
+    "Url": "https://github.com/dyliuti/Demo",
+    "Dependencies": [ 
+		// { "Name" : "Login", "Version" : "1.0.0" }
+    ]
+}
