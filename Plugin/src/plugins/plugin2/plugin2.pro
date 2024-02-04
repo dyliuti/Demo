@@ -2,7 +2,7 @@ QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-ymw += extension
+ymw += extension plugin1
 
 CONFIG += c++17
 TARGET = plugin2

@@ -24,7 +24,7 @@ public:
     T *getObject()
     {
         QReadLocker lock(listLock());
-        const QVector<QObject *> all = allObjects();
+        const QVector<QObject *>& all = allObjects();
         for (QObject *obj : all) {
             if (T *result = qobject_cast<T *>(obj))
                 return result;
@@ -36,7 +36,7 @@ public:
     T *getObject(Predicate predicate)
     {
         QReadLocker lock(listLock());
-        const QVector<QObject *> all = allObjects();
+        const QVector<QObject *>& all = allObjects();
         for (QObject *obj : all) {
             if (T *result = qobject_cast<T *>(obj))
                 if (predicate(result))

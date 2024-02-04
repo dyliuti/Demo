@@ -93,9 +93,6 @@ isEmpty(lib_root){ # if $$lib_root not set, set it. $$OUTPUT_PWD may be comes fr
     unix:!macx:lib_root = $$OUTPUT_PWD/lib
 }
 
-# set output path as lib path
-LIBS *= -L$${lib_root}
-exists($${lib_root}/plugins): -L$${lib_root}/plugins
 
 # check module is avaliable
 for (module, ymw) {
@@ -120,6 +117,10 @@ for (module, ymw) {
 # print current pro enabled module list
 !build_pass:!isEmpty(enabled_modules):message($$basename(_PRO_FILE_) enabled eeomodules: $$enabled_modules)
 
+# set output path as lib path
+LIBS *= -L$${lib_root}
+exists($${lib_root}/plugins): -L$${lib_root}/plugins
+message("777777 $${lib_root}/plugins")
 ### define each module that can use
 
 # extensionsystem
@@ -129,6 +130,20 @@ contains(enabled_modules, extension){
     INCLUDEPATH *= $$PWD/lib/extension
 
     LIBS += -lextension
+}
+
+contains(enabled_modules, plugin1){
+    INCLUDEPATH *= $$PWD/plugins
+    INCLUDEPATH *= $$PWD/plugins/plugin1
+
+    LIBS += -lplugins/plugin1
+}
+
+contains(enabled_modules, plugin2){
+    INCLUDEPATH *= $$PWD/plugins
+    INCLUDEPATH *= $$PWD/plugins/plugin2
+
+    LIBS += -lplugins/plugin2
 }
 
 # update deploy timestame

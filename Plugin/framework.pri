@@ -38,7 +38,7 @@ contains( DEFINES, YMW_LIBRARY ){
 contains( DEFINES, YMW_PLUGIN ){
     win32:DESTDIR = $$OUTPUT_PWD/plugins
     macx:DESTDIR = "$$OUTPUT_PWD/$$TARGET_BUNDLE_NAME/Contents/Library/plugins"
-    unix:!macx:DESTDIR = $$OUTPUT_PWD/lib/plugins
+    unix:!macx:DESTDIR = $$OUTPUT_PWD/plugins
 }
 
 win32 {
