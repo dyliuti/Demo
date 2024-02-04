@@ -1,7 +1,7 @@
-#ifndef PLUGINSPEC_H
+﻿#ifndef PLUGINSPEC_H
 #define PLUGINSPEC_H
 
-#include "ExtensionDefine.h"
+#include "define.h"
 
 #include <QString>
 #include <QObject>

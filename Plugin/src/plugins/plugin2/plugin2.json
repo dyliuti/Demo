@@ -1,14 +1,14 @@
 {
-    "Name": "plugin2",
-    "Version": "1.0.0",
-    "CompatVersion": "1.0.0",
-    "Required": true,
-    "Vendor": "Yanminwei Ltd",
-    "Copyright": "(C) 2024 Yanminwei Ltd",
-    "Category": "YMW",
-    "Description": "the plugin2 test",
-    "Url": "https://github.com/dyliuti/Demo",
-    "Dependencies": [ 
-		// { "Name" : "Login", "Version" : "1.0.0" }
+    "name": "plugin2",
+    "version": "1.0.0",
+    "compatVersion": "1.0.0",
+    "required": true,
+    "vendor": "Yanminwei Ltd",
+    "copyright": "(C) 2024 Yanminwei Ltd",
+    "category": "YMW",
+    "description": "the plugin2 test",
+    "url": "https://github.com/dyliuti/Demo",
+    "dependencies": [ 
+		{ "Name" : "plugin1", "Version" : "1.0.0" }
     ]
 }

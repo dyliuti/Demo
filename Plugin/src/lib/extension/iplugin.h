@@ -1,7 +1,7 @@
-#ifndef IPLUGIN_H
+﻿#ifndef IPLUGIN_H
 #define IPLUGIN_H
 
-#include "ExtensionDefine.h"
+#include "define.h"
 #include <QObject>
 
 class EXTENSION_EXPORT IPlugin : public QObject

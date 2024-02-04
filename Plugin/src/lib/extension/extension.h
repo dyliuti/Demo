@@ -1,7 +1,7 @@
-#ifndef EXTENSION_H
+﻿#ifndef EXTENSION_H
 #define EXTENSION_H
 
-#include "ExtensionDefine.h"
+#include "define.h"
 
 #include <QVector>
 #include <memory>

@@ -2,6 +2,7 @@
 #define PLUGIN1_H
 
 #include "extension/iplugin.h"
+#include "plugin1Mgr.h"
 
 class Plugin1 : public IPlugin
 {
@@ -14,8 +15,7 @@ public:
     bool load() override;
 
 private:
-//    std::shared_ptr<LauncherxMgr> m_pMgr;
-//    QPointer<Launcherx::LauncherxWidget> m_launcherXWidget;
+    std::shared_ptr<Plugin1Mgr> m_pMgr;
 };
 
 #endif // PLUGIN1_H

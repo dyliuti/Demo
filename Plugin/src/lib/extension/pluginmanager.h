@@ -1,7 +1,7 @@
 ﻿#ifndef PLUGINMANAGER_H
 #define PLUGINMANAGER_H
 
-#include "ExtensionDefine.h"
+#include "define.h"
 #include "pluginspec.h"
 #include <QList>
 

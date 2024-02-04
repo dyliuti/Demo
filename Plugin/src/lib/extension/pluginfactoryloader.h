@@ -1,7 +1,7 @@
-#ifndef PLUGINFACTORYLOADER_H
+﻿#ifndef PLUGINFACTORYLOADER_H
 #define PLUGINFACTORYLOADER_H
 
-#include "ExtensionDefine.h"
+#include "define.h"
 #include "pluginspec.h"
 
 #include <QObject>

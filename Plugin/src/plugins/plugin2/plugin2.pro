@@ -7,7 +7,7 @@ ymw += extension
 CONFIG += c++17
 TARGET = plugin2
 TEMPLATE = lib
-DEFINES += YMW_PLUGIN
+DEFINES += YMW_PLUGIN PLUGIN2_LIBRARY
 
 # You can make your code fail to compile if it uses deprecated APIs.
 # In order to do so, uncomment the following line.
