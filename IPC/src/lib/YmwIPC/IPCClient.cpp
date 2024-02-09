@@ -21,8 +21,8 @@ IPCClient::IPCClient(qint64 serverPort, QObject *parent)
         qDebug() << "EeoTcpServer::sendData ======= ccc";
     }
 
-    moveToThread(&m_workThread);
-    m_workThread.start();
+//    moveToThread(&m_workThread);
+//    m_workThread.start();
 }
 
 IPCClient::~IPCClient()

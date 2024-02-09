@@ -8,7 +8,7 @@ void IPCServer::run()
 {
     m_server = new QTcpServer();
 
-    if(m_server->listen(QHostAddress::Any)) {
+    if(m_server->listen(QHostAddress::Any, 7733)) {
         qInfo() << "IPCServer listen";
         connect(m_server, &QTcpServer::newConnection, this, &IPCServer::onNewConnection);
     } else {
