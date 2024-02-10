@@ -3,6 +3,7 @@
 
 #include <QObject>
 #include <IPCServer.h>
+#include "mainwindow.h"
 
 class IPCServerMgr : public QObject
 {
@@ -21,6 +22,7 @@ public:
 
 signals:
     void sigNewConnect(int descriptor);
+    void sigNewMessage(QString mes);
 
 protected slots:
     void onIPCDataReceived(qint8 dateType, const QByteArray &message);

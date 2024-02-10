@@ -11,6 +11,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     m_label = new QLabel(this);
     m_label->setText("nihao Im client");
+    m_label->setMinimumWidth(900);
     layout()->addWidget((QWidget*)m_label);
 }
 

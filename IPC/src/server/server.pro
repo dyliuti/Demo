@@ -1,5 +1,5 @@
 QT       += core gui
-
+#TEMPLATE = lib
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 ymw += ymwipc
 CONFIG += c++11

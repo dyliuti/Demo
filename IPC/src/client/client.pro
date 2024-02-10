@@ -1,8 +1,12 @@
 QT       += core gui network
+CONFIG += c++17
+#TEMPLATE = lib
+#QT -= gui
+#QT += network core
+#CONFIG -= app_bundle
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 ymw += ymwipc
-CONFIG += c++11
 DEFINES += YMW_APP # YMW_LIBRARY
 # You can make your code fail to compile if it uses deprecated APIs.
 # In order to do so, uncomment the following line.

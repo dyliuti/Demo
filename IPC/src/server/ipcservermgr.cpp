@@ -1,5 +1,7 @@
 ﻿#include "ipcservermgr.h"
 #include <QDebug>
+#include "IPCProtocol/IPCMessageType.h"
+#include <QDataStream>
 
 IPCServerMgr::IPCServerMgr(QObject *parent)
     : QObject{parent}
@@ -23,9 +25,15 @@ quint16 IPCServerMgr::serverPort()
 void IPCServerMgr::onIPCDataReceived(qint8 dateType, const QByteArray &message)
 {
     qInfo() << "111111: " << __FUNCTION__ << dateType << message;
-//    switch (dateType) {
-//    default: {
-
-//    }
-//    }
+    switch (dateType) {
+    case PostTest_CS: {
+        QByteArray data;
+        bool flag;
+        QDataStream stream(message);
+        stream >> data;
+        stream >> flag;
+        emit sigNewMessage(QString::fromLocal8Bit(data));
+        qInfo() << "sever recv data: " << QString(data) << flag;
+    }
+    }
 }

@@ -14,6 +14,9 @@ public:
         static IPCClientMgr self;
         return self;
     }
+    void postMessageToServer(qint8 dataType, const QByteArray &data = ""){m_ipcClient->postMessageToServer(dataType, data);}
+    QByteArray sendMessageToServer(qint8 dataType, const QByteArray &data = "", int timeout = REMOTE_CALL_TIMEOUT){m_ipcClient->sendMessageToServer(dataType, data, timeout);}
+
     void init(qint64 serverPort);
     quint16 serverPort();
 

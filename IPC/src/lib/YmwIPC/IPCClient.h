@@ -6,7 +6,7 @@
 #include <QDeadlineTimer>
 #include <QThread>
 #include "ymwIPC_global.h"
-#include "IPCProtocol/IPCMessageHelper.h"
+#include "IPCProtocol/IPCMessageType.h"
 
 class QTcpSocket;
 class YMWIPC_EXPORT IPCClient : public IPCBase
@@ -18,8 +18,8 @@ public:
     ~IPCClient();
     void run() override;
 
-    void postMessageToServer(qint8 dateType, const QByteArray &data = "");
-    QByteArray sendMessageToServer(qint8 dateType, const QByteArray &data = "", int timeout = REMOTE_CALL_TIMEOUT);
+    void postMessageToServer(qint8 dataType, const QByteArray &data = "");
+    QByteArray sendMessageToServer(qint8 dataType, const QByteArray &data = "", int timeout = REMOTE_CALL_TIMEOUT);
 
 public slots:
     void onReadSocket();

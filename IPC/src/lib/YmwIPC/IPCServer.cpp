@@ -7,7 +7,7 @@
 void IPCServer::run()
 {
     m_server = new QTcpServer();
-
+    // 7733
     if(m_server->listen(QHostAddress::Any, 7733)) {
         qInfo() << "IPCServer listen";
         connect(m_server, &QTcpServer::newConnection, this, &IPCServer::onNewConnection);
@@ -16,7 +16,7 @@ void IPCServer::run()
     }
 }
 
-void IPCServer::postMessageToClient(quint8 msgType, const QByteArray &data, int clientId)
+void IPCServer:: postMessageToClient(quint8 msgType, const QByteArray &data, int clientId)
 {
     QObject obj;
     connect(&obj, &QObject::destroyed, this, [this, data, msgType, clientId]() {

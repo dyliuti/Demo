@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QProcess>
 #include "ipcservermgr.h"
+#include <QLabel>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -16,10 +17,13 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    void setText(QString text);
 
 private:
     Ui::MainWindow *ui;
+
     QProcess m_process;
-    IPCServerMgr* m_ipcServerMgr;
+//    IPCServerMgr* m_ipcServerMgr = nullptr;
+    QLabel* m_label = nullptr;
 };
 #endif // MAINWINDOW_H
