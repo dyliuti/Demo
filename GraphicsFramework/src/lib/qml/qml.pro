@@ -4,7 +4,8 @@ QT += qml quick
 CONFIG += plugin c++17
 DEFINES += YMW_LIBRARY
 
-TARGET = $$qtLibraryTarget($$TARGET)
+#TARGET = $$qtLibraryTarget($$TARGET)
+TARGET = qmlPlugin
 uri = qmlPlugin
 
 # Input
@@ -18,9 +19,8 @@ DISTFILES = qmldir
 
 include(../../../framework.pri)
 include(../../module.pri)
-message("222222: $$OUTPUT_PWD")
-QML_PLUGIN_OUTPUT_DIR = $$OUTPUT_PWD/qmlPlugin
-system(mkdir $$QML_PLUGIN_OUTPUT_DIR)
+
+QML_PLUGIN_OUTPUT_DIR = $$OUTPUT_PWD
 !equals(_PRO_FILE_PWD_, $$QML_PLUGIN_OUTPUT_DIR) {
     copy_qmldir.target = $$QML_PLUGIN_OUTPUT_DIR/qmldir
     copy_qmldir.depends = $$_PRO_FILE_PWD_/qmldir

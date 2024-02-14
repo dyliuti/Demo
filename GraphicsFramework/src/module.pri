@@ -1,12 +1,8 @@
 !isEmpty(MODULE_PRI_INCLUDED):error("module.pri already included in $$basename(_PRO_FILE_)")
 MODULE_PRI_INCLUDED = 1
 
-### define avaliable eeo module list
-# serverproxy
+### define avaliable ymw module list
 avaliable_modules += board qmlplugin widgetbase
-
-# to compat old config
-#!contains(DEFINES,BUILD_BY_JENKINS): DEFINES *= NO_EEOUPDATER
 
 win32 {
     !contains(QMAKE_TARGET.arch, x86_64) {
@@ -23,6 +19,7 @@ macx {
         _platform_type = mac
     }
 }
+
 ### define fuctions
 defineTest(check_pro_exist) {
     project_file = $${1}
@@ -93,7 +90,6 @@ isEmpty(lib_root){ # if $$lib_root not set, set it. $$OUTPUT_PWD may be comes fr
     unix:!macx:lib_root = $$OUTPUT_PWD/lib
 }
 
-
 # check module is avaliable
 for (module, ymw) {
     _lower_module_name = $$lower($$module)
@@ -124,7 +120,6 @@ message("777777 $${lib_root}/plugins")
 ### define each module that can use
 
 # extensionsystem
-message("555 $$PWD") # D:/Code2/Demo/Plugin/src
 contains(enabled_modules, board){
     INCLUDEPATH *= $$PWD/lib
     INCLUDEPATH *= $$PWD/lib/board

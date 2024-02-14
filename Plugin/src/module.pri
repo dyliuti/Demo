@@ -1,12 +1,8 @@
 !isEmpty(MODULE_PRI_INCLUDED):error("module.pri already included in $$basename(_PRO_FILE_)")
 MODULE_PRI_INCLUDED = 1
 
-### define avaliable eeo module list
-# serverproxy
+### define avaliable ymw module list
 avaliable_modules += plugin1 plugin2 extension
-
-# to compat old config
-#!contains(DEFINES,BUILD_BY_JENKINS): DEFINES *= NO_EEOUPDATER
 
 win32 {
     !contains(QMAKE_TARGET.arch, x86_64) {

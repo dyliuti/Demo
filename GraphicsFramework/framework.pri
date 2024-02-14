@@ -25,11 +25,12 @@ CONFIG(debug, debug|release){
     UI_DIR = $$GENERATEDFILES/release
     RCC_DIR = $$GENERATEDFILES/release
 
-# D:/Code2/Demo/Plugin/ymwPluginRelease/qrelease
+#   D:/Code2/Demo/Plugin/ymwPluginRelease/qrelease
     OUTPUT_PWD=$$shadowed($$ROOT_PWD)/qrelease
 }
 
-contains( DEFINES, YMW_LIBRARY ){
+message("333333 $$OUT_PWD $$shadowed($$ROOT_PWD)")
+contains(DEFINES, YMW_LIBRARY){
     win32:DESTDIR = $$OUTPUT_PWD
     macx:DESTDIR = "$$OUTPUT_PWD/$$TARGET_BUNDLE_NAME/Contents/Library"
     unix:!macx:DESTDIR = $$OUTPUT_PWD/lib
@@ -61,12 +62,6 @@ win32 {
     target_arch = win64
     DEFINES += TARGET_ARCH_WIN64
 }
-}
-
-unix:!macx {
-    DEFINES += BUILD_NO_CRASHHANDLER
-    DEFINES += NO_APP_UPGRADE
-#    DEFINES += BUILD_NO_CEF
 }
 
 # msvc: force source files to be treated as utf8 encoded
