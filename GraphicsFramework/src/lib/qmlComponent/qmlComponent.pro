@@ -3,7 +3,7 @@ TARGET = YmwPlugin
 QT += qml quick
 CONFIG += plugin c++11
 
-DEFINES += YMW_QML_PLUGIN
+DEFINES += QML_PLUGIN
 TARGET = $$qtLibraryTarget($$TARGET)
 uri = YmwPlugin  # 因为PLUGIN_PARENT_PATH 中生成qmltypes的目录就是uri，不相同，如com.ymw.qmlcpmponents的话生成就不再一个目录下了，而且还会有生成问题
 
