@@ -2,10 +2,11 @@ TEMPLATE = lib
 
 QT += qml quick
 CONFIG += plugin c++17
-DEFINES += YMW_LIBRARY
+DEFINES += QML_PLUGIN
 
 #TARGET = $$qtLibraryTarget($$TARGET)
 TARGET = qmlPlugin
+TARGET = $$qtLibraryTarget($$TARGET)
 uri = qmlPlugin
 
 # Input
@@ -15,12 +16,11 @@ win32 {
     FORMS += $$system(for /r $$PWD %i in (*.ui) do @echo %i)
 }
 
-DISTFILES = qmldir
-
 include(../../../framework.pri)
 include(../../module.pri)
 
-QML_PLUGIN_OUTPUT_DIR = $$OUTPUT_PWD
+DISTFILES = qmldir
+QML_PLUGIN_OUTPUT_DIR = $$OUTPUT_PWD/qmlPlugin
 !equals(_PRO_FILE_PWD_, $$QML_PLUGIN_OUTPUT_DIR) {
     copy_qmldir.target = $$QML_PLUGIN_OUTPUT_DIR/qmldir
     copy_qmldir.depends = $$_PRO_FILE_PWD_/qmldir
@@ -36,3 +36,10 @@ unix {
     target.path = $$installPath
     INSTALLS += target qmldir
 }
+
+PLUGIN_NAME          = $$uri
+PLUGIN_VERSION       = 1.0
+PLUGIN_PARENT_PATH   = $$QML_PLUGIN_OUTPUT_DIR/../
+PLUGIN_QMLTYPES_PATH = $$QML_PLUGIN_OUTPUT_DIR/qmlplugin.qmltypes
+QMAKE_POST_LINK += $$system($$quote($$[QT_HOST_PREFIX]/bin/qmlplugindump.exe -nonrelocatable $$PLUGIN_NAME \"$$PLUGIN_VERSION\" \"$$PLUGIN_PARENT_PATH\" > \"$$PLUGIN_QMLTYPES_PATH\"))
+

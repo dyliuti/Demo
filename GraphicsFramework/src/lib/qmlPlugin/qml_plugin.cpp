@@ -1,4 +1,4 @@
-#include "qml_plugin.h"
+﻿#include "qml_plugin.h"
 
 #include "myitem.h"
 
@@ -6,7 +6,7 @@
 
 void QmlPlugin::registerTypes(const char *uri)
 {
-    // @uri qml
+    // @uri qmlPlugin
     qmlRegisterType<MyItem>(uri, 1, 0, "MyItem");
 }
 

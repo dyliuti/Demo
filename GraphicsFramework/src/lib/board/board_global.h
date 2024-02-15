@@ -9,4 +9,13 @@
 #  define BOARD_EXPORT Q_DECL_IMPORT
 #endif
 
+#define BOARD_NAMESPACE_BEGIN \
+namespace Board {
+
+#define BOARD_NAMESPACE_END \
+}
+
+#define BOARD_NAMESPACE_USE \
+using namespace Board;
+
 #endif // BOARD_GLOBAL_H
