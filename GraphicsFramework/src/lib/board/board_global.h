@@ -18,4 +18,22 @@ namespace Board {
 #define BOARD_NAMESPACE_USE \
 using namespace Board;
 
+#define OPENGL_NAMESPACE_BEGIN \
+namespace Opengl {
+
+#define OPENGL_NAMESPACE_END \
+}
+
+#define OPENGL_NAMESPACE_USE \
+using namespace Opengl;
+
+#define PAINTER_NAMESPACE_BEGIN \
+namespace Painter {
+
+#define PAINTER_NAMESPACE_END \
+}
+
+#define PAINTER_NAMESPACE_USE \
+using namespace Painter;
+
 #endif // BOARD_GLOBAL_H
