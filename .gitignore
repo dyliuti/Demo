@@ -5,6 +5,7 @@ Lesson1/*.vs/*
 *.vs
 Lesson1/Debug/*
 Lesson1/Release/*
+*qrelease*
 *~
 *.autosave
 *.a
