@@ -177,7 +177,7 @@
      <x>0</x>
      <y>0</y>
      <width>886</width>
-     <height>26</height>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -249,7 +249,7 @@
   <widget class="QStatusBar" name="statusBar"/>
   <action name="actionAdd_Image">
    <property name="icon">
-    <iconset resource="resource.qrc">
+    <iconset>
      <normaloff>:/images/open.png</normaloff>:/images/open.png</iconset>
    </property>
    <property name="text">
@@ -258,7 +258,7 @@
   </action>
   <action name="actionQuit">
    <property name="icon">
-    <iconset resource="resource.qrc">
+    <iconset>
      <normaloff>:/images/close.png</normaloff>:/images/close.png</iconset>
    </property>
    <property name="text">
@@ -267,7 +267,7 @@
   </action>
   <action name="actionPen">
    <property name="icon">
-    <iconset resource="resource.qrc">
+    <iconset>
      <normaloff>:/images/pen.png</normaloff>:/images/pen.png</iconset>
    </property>
    <property name="text">
@@ -276,7 +276,7 @@
   </action>
   <action name="actionEraser">
    <property name="icon">
-    <iconset resource="resource.qrc">
+    <iconset>
      <normaloff>:/images/eraser.png</normaloff>:/images/eraser.png</iconset>
    </property>
    <property name="text">
@@ -285,7 +285,7 @@
   </action>
   <action name="actionEllipse">
    <property name="icon">
-    <iconset resource="resource.qrc">
+    <iconset>
      <normaloff>:/images/circle.png</normaloff>:/images/circle.png</iconset>
    </property>
    <property name="text">
@@ -294,7 +294,7 @@
   </action>
   <action name="actionRectangle">
    <property name="icon">
-    <iconset resource="resource.qrc">
+    <iconset>
      <normaloff>:/images/rectangle1.png</normaloff>:/images/rectangle1.png</iconset>
    </property>
    <property name="text">
@@ -303,7 +303,7 @@
   </action>
   <action name="actionStar">
    <property name="icon">
-    <iconset resource="resource.qrc">
+    <iconset>
      <normaloff>:/images/star.png</normaloff>:/images/star.png</iconset>
    </property>
    <property name="text">
@@ -312,7 +312,7 @@
   </action>
   <action name="actionAbout">
    <property name="icon">
-    <iconset resource="resource.qrc">
+    <iconset>
      <normaloff>:/images/about.png</normaloff>:/images/about.png</iconset>
    </property>
    <property name="text">
@@ -321,7 +321,7 @@
   </action>
   <action name="actionCursor">
    <property name="icon">
-    <iconset resource="resource.qrc">
+    <iconset>
      <normaloff>:/images/cursor.png</normaloff>:/images/cursor.png</iconset>
    </property>
    <property name="text">
@@ -330,7 +330,7 @@
   </action>
   <action name="actionSave">
    <property name="icon">
-    <iconset resource="resource.qrc">
+    <iconset>
      <normaloff>:/images/save.png</normaloff>:/images/save.png</iconset>
    </property>
    <property name="text">
@@ -339,7 +339,7 @@
   </action>
   <action name="actionLoad">
    <property name="icon">
-    <iconset resource="resource.qrc">
+    <iconset>
      <normaloff>:/images/open.png</normaloff>:/images/open.png</iconset>
    </property>
    <property name="text">
@@ -348,7 +348,7 @@
   </action>
   <action name="actionCopy">
    <property name="icon">
-    <iconset resource="resource.qrc">
+    <iconset>
      <normaloff>:/images/copyIcon.png</normaloff>:/images/copyIcon.png</iconset>
    </property>
    <property name="text">
@@ -357,7 +357,7 @@
   </action>
   <action name="actionCut">
    <property name="icon">
-    <iconset resource="resource.qrc">
+    <iconset>
      <normaloff>:/images/cutIcon.png</normaloff>:/images/cutIcon.png</iconset>
    </property>
    <property name="text">
@@ -366,7 +366,7 @@
   </action>
   <action name="actionPaste">
    <property name="icon">
-    <iconset resource="resource.qrc">
+    <iconset>
      <normaloff>:/images/pasteIcon.png</normaloff>:/images/pasteIcon.png</iconset>
    </property>
    <property name="text">
@@ -375,7 +375,7 @@
   </action>
   <action name="actionUndo">
    <property name="icon">
-    <iconset resource="resource.qrc">
+    <iconset>
      <normaloff>:/images/undoIcon.png</normaloff>:/images/undoIcon.png</iconset>
    </property>
    <property name="text">
@@ -384,7 +384,7 @@
   </action>
   <action name="actionRedo">
    <property name="icon">
-    <iconset resource="resource.qrc">
+    <iconset>
      <normaloff>:/images/redoIcon.png</normaloff>:/images/redoIcon.png</iconset>
    </property>
    <property name="text">
@@ -400,8 +400,6 @@
    <header location="global">dragbutton.h</header>
   </customwidget>
  </customwidgets>
- <resources>
-  <include location="resource.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>
