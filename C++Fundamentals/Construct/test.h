@@ -9,6 +9,10 @@ public:
     {
         qInfo() << "construct";
     };
+    ~Test()
+    {
+        qInfo() << "destruct: " << m_a;
+    }
     Test(const Test& a)
     {
         m_a = a.m_a;

@@ -87,3 +87,14 @@ void ConsTruct::testEmplaceBack()
     testVec.emplace_back(3); // construct 直接传构造函数参数时，两者就有显著的区别了，emplace_back可以减少一次移动拷贝
     // 传入左值或右值的话两者一样，push_back本地调用的是emplace_back
 }
+
+void ConsTruct::testSharedPtr()
+{
+    {
+        auto ptr = std::make_shared<Test>(3);
+        m_test = ptr.get();
+        m_test->print();
+    }
+    qInfo() << "333333: " << m_test;
+    m_test->print(); // 野指针了
+}

@@ -10,7 +10,7 @@ class MyItem : public QQuickItem // QQuickPaintedItem
     Q_DISABLE_COPY(MyItem)
 
 public:
-    explicit MyItem(QQuickItem *parent = nullptr);
+    explicit MyItem(QQuickItem* parent = nullptr);
     ~MyItem() override;
 };
 

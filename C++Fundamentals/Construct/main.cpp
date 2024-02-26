@@ -14,7 +14,8 @@ int main(int argc, char* argv[])
     QCoreApplication a(argc, argv);
     {
         ConsTruct cons;
-        cons.testEmplaceBack();
+        //        cons.testEmplaceBack();
+        cons.testSharedPtr();
     }
 
     return a.exec();
