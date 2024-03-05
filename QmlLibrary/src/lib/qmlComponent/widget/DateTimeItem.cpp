@@ -1,13 +1,12 @@
 ﻿#include "DateTimeItem.h"
-#include <QDateTime>
-#include <QPainter>
-#include <QTimer>
-#include <QFontDatabase>
 #include <QDate>
+#include <QDateTime>
+#include <QFontDatabase>
+#include <QPainter>
 #include <QTime>
-//#include "LauncherxUtil.h"
+#include <QTimer>
 
-DateTimeItem::DateTimeItem(QQuickItem *parent)
+DateTimeItem::DateTimeItem(QQuickItem* parent)
     : QQuickPaintedItem(parent)
 {
     //    int fontId = QFontDatabase::addApplicationFont("qrc:/font/font/gry.otf");
@@ -27,7 +26,7 @@ DateTimeItem::~DateTimeItem()
 {
 }
 
-void DateTimeItem::paint(QPainter *painter)
+void DateTimeItem::paint(QPainter* painter)
 {
     painter->setRenderHint(QPainter::Antialiasing);
 

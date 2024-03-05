@@ -13,6 +13,7 @@ public:
 private:
     int m_a = 0;
     Test* m_test {};
+    std::weak_ptr<Test> m_weakTest;
 };
 
 #endif // CONSTRUCT_H

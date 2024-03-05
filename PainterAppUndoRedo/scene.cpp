@@ -148,7 +148,7 @@ void Scene::mouseMoveEvent(QGraphicsSceneMouseEvent* event)
             drawShapeTo(event->scenePos());
         }
     } else if ((event->buttons() & Qt::LeftButton) && (tool == Cursor)) {
-
+        // 多选
         if (m_selectedItems.isEmpty() && selectedItemInitialPositions.isEmpty()
             && !selectedItems().isEmpty()) {
 

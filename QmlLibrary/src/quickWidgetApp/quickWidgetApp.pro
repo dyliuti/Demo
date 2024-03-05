@@ -1,4 +1,4 @@
-QT       += core gui quickwidgets
+QT       += core gui quickwidgets svg
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -21,7 +21,8 @@ include(../module.pri)
 
 
 RESOURCES += \
-  qml.qrc
+  qml.qrc \
+  resource.qrc
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

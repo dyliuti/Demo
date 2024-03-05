@@ -13,8 +13,16 @@ Rectangle {
         color: "black"
     }
 
-//    Rectangle {
+//    Image {
+//        anchors.fill: parent
+//        source: "file:///C:/background.png"
+//        sourceSize.width: 2560
+//        sourceSize.height: 1440
+//    }
 
+//    ImageItem {
+//        anchors.fill: parent
+//    }
 
 //        DateTimeItem {
 //            width: 200

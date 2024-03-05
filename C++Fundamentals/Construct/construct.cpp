@@ -92,9 +92,11 @@ void ConsTruct::testSharedPtr()
 {
     {
         auto ptr = std::make_shared<Test>(3);
+        m_weakTest = ptr;
         m_test = ptr.get();
+        //        m_weakTest = ptr;
         m_test->print();
     }
-    qInfo() << "333333: " << m_test;
+    qInfo() << "333333: " << m_test << m_weakTest.use_count() << (m_weakTest.lock() == nullptr);
     m_test->print(); // 野指针了
 }
