@@ -26,6 +26,7 @@ public:
     Q_PROPERTY(quint64 fileId READ fileId WRITE setFileId NOTIFY sigFileIdChanged);
     Q_PROPERTY(QString showName READ showName WRITE setShowName NOTIFY sigShowNameChanged);
     Q_PROPERTY(ListData::Type type READ type WRITE setType);
+    Q_PROPERTY(bool dataEnable READ dataEnable WRITE setDataEnable NOTIFY sigDataEnableChanged);
 
     quint64 fileId() const;
     void setFileId(quint64 newFileId);
@@ -34,14 +35,20 @@ public:
     ListData::Type type() const;
     void setType(ListData::Type newType);
 
+    bool dataEnable() const;
+    void setDataEnable(bool newDataEnable);
+
 signals:
     void sigFileIdChanged();
     void sigShowNameChanged();
+
+    void sigDataEnableChanged();
 
 private:
     QString m_showName;
     quint64 m_fileId;
     ListData::Type m_type;
+    bool m_dataEnable = false;
 };
 
 #endif // LIST_DATA_H

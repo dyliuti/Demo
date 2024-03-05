@@ -54,3 +54,16 @@ void ListData::setType(ListData::Type newType)
 {
     m_type = newType;
 }
+
+bool ListData::dataEnable() const
+{
+    return m_dataEnable;
+}
+
+void ListData::setDataEnable(bool newDataEnable)
+{
+    if (m_dataEnable == newDataEnable)
+        return;
+    m_dataEnable = newDataEnable;
+    emit sigDataEnableChanged();
+}

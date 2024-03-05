@@ -89,6 +89,9 @@ QVariant ListModel::data(const QModelIndex& index, int role) const
     case FileIdRole: {
         return data->fileId();
     }
+    case DataEnableRole: {
+        return data->dataEnable();
+    }
     default: {
         break;
     }
@@ -112,18 +115,23 @@ bool ListModel::setData(const QModelIndex& index, const QVariant& value, int rol
         }
         break;
     }
-
     case TypeRole: {
-        if (data->showName() != value.toString()) {
-            data->setShowName(value.toString());
+        if (data->type() != value.toInt()) {
+            data->setType((ListData::Type)value.toInt());
             emit dataChanged(index, index);
         }
         break;
     }
-
     case FileIdRole: {
-        if (data->showName() != value.toString()) {
-            data->setShowName(value.toString());
+        if (data->fileId() != value.toULongLong()) {
+            data->setFileId(value.toULongLong());
+            emit dataChanged(index, index);
+        }
+        break;
+    }
+    case DataEnableRole: {
+        if (data->dataEnable() != value.toBool()) {
+            data->setDataEnable(value.toBool());
             emit dataChanged(index, index);
         }
         break;

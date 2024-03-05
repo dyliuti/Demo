@@ -11,7 +11,8 @@ public:
     enum ListRoles {
         FileIdRole = Qt::UserRole + 1,
         TypeRole,
-        NameRole
+        NameRole,
+        DataEnableRole,
     };
     explicit ListModel(QObject* parent = nullptr);
     ~ListModel() override;

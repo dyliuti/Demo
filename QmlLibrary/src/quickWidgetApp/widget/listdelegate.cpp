@@ -16,6 +16,7 @@ static QMap<ListData::Type, QString> s_typeImg {
 static int s_itemHeight = 40;
 static int s_typeImgHeight = 20;
 static int s_selectImgHeight = 12;
+static int s_radius = 6;
 
 QSize ListDelegate::sizeHint(const QStyleOptionViewItem& option, const QModelIndex& index) const
 {
@@ -28,14 +29,13 @@ void ListDelegate::paint(QPainter* painter, const QStyleOptionViewItem& option,
     painter->save();
 
     const auto& rect = option.rect;
-    // check
     bool bSelect = option.state & QStyle::State_Selected;
+    // check
     if (bSelect) {
         QRect rectImage(rect.topLeft().x() + 8, rect.topLeft().y() + (s_itemHeight - s_selectImgHeight) / 2, s_selectImgHeight, s_selectImgHeight);
         QSvgRenderer svg(QString(":/com/img/list/select.svg"));
         svg.render(painter, rectImage);
     }
-
     // type img
     QRect typeRect(rect.topLeft().x() + 28, rect.topLeft().y() + (s_itemHeight - s_typeImgHeight) / 2, s_typeImgHeight, s_typeImgHeight);
     ListData::Type type = (ListData::Type)index.data(ListModel::TypeRole).toInt();
@@ -50,6 +50,14 @@ void ListDelegate::paint(QPainter* painter, const QStyleOptionViewItem& option,
     painter->setFont(font);
     QString showName = index.data(ListModel::NameRole).toString();
     painter->drawText(rect.adjusted(56, 0, 0, 0), showName, Qt::AlignLeft | Qt::AlignVCenter);
+
+    // dataEnable
+    bool dataEnbale = index.data(ListModel::DataEnableRole).toBool();
+    if (dataEnbale) {
+        painter->setPen(Qt::NoPen);
+        painter->setBrush(Qt::red /*QBrush(QColor("ED4747"))*/);
+        painter->drawEllipse(28 + 20 - 4 + s_radius / 2, rect.y() + 4, s_radius, s_radius);
+    }
 
     painter->restore();
 }

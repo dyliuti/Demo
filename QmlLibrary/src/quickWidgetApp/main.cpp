@@ -3,6 +3,7 @@
 #include "widget/listmodel.h"
 #include "widget/listview.h"
 #include <QApplication>
+#include <QItemSelectionModel>
 #include <QQmlEngine>
 #include <QVBoxLayout>
 #include <QWidget>
@@ -54,6 +55,13 @@ int main(int argc, char* argv[])
         listview->setItemDelegateForRow(model->rowCount() - 2, spliteLineDelegate);
     }
 
+    // 设置选中项
+    //    listview->setSelectionMode(QListView::SingleSelection);
+    auto selectionModel = listview->selectionModel();
+    selectionModel->select(model->index(1, 0), QItemSelectionModel::Select);
+
+    // 设置dataEnbale
+    model->setData(model->index(2, 0), true, ListModel::DataEnableRole);
     new BackgroundDecoration(w, BackgroundDecoration::RoundRectImage);
     w->show();
     //    w->deleteLater();
