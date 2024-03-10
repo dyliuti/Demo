@@ -3,6 +3,9 @@ TEMPLATE = subdirs
 SUBDIRS += src/lib/extension
 pro_file = $$PWD/src/lib/extension/extension.pro
 
+SUBDIRS += src/lib/widget
+pro_file = $$PWD/src/lib/widget.pro
+
 SUBDIRS += src/plugins/plugin1
 pro_file = $$PWD/src/plugins/plugin1/plugin1.pro
 
